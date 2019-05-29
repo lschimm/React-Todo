@@ -2,21 +2,28 @@
 // data and displays the task to the screen.
 
 import React from 'react';
+import { tsImportEqualsDeclaration } from '@babel/types';
 
 class Todo extends React.Component {
     constructor() {
         super();
         this.state = {
-            someValue: ""
+            todos: [
+                {
+                    task: 'Eat',
+                    id: 456,
+                    completed: false
+                },
+                {
+                    task: 'Sleep',
+                    id: 789,
+                    completed: false
+                }
+            ]
         }
-    }
-    render() {
-        return (
-            <div className="Task">
-                <h1>Todo</h1>
-            </div>
-        )
     }
 }
 
-export default Todo;
+
+
+export default TodoForm;

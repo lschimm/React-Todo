@@ -9,14 +9,17 @@
 
 import React from 'react';
 
-class TodoList extends React.Component {
-    render() {
-        return(
-            <div className="todo-info">
-                
-            </div>
-        )
-    }
+import Todo from './Todo';
+
+const TodoList = props => {
+    return (
+        <div>
+            {props.todos.map(todo => (
+                <todo todos={todo}
+                id ={todo.id} />
+            ))}
+        </div>
+    )
 }
 
 export default TodoList;
