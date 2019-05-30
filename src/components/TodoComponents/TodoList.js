@@ -7,7 +7,7 @@
 // the list generating a new `<Todo />` for each element in the array.
 
 
-import React from 'react';
+import React, { Component } from 'react';
 
 import Todo from './Todo';
 

@@ -2,22 +2,43 @@ import React from 'react';
 
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import { lists } from './tododata';
+import { random } from 'node-forge';
+// import Todo from './components/TodoComponents/Todo';
 
 class App extends React.Component {
   constructor () {
     super();
-    this.state= [
-      {
-        task: 'Organize Garage',
-        id: 1528817077286,
-        completed: false
-      },
-      {
-        task: 'Bake Cookies',
-        id: 1528817084358,
-        completed: false
+    this.state = {
+      listsData: lists,
+
+      task: '',
+      id: 0,
+      completed: false
       }
-    ]
+  }
+
+  changeHandler = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  addListData = event => {
+    event.preventDefault();
+
+    const newData = {
+      task: this.state.task,
+      id: this.state.id,
+      completed: this.state.completed
+    };
+
+    this.setState({
+      listsData: [...this.state.listsData, newData],
+      task: '',
+      id: Date.now(),
+      completed: false
+    })
   }
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -28,8 +49,13 @@ class App extends React.Component {
       <div>
         <h2>Todo List: </h2>
         <TodoList 
-        todos={this.state} />
-        <TodoForm />
+        todos={this.state.listsData} />
+        {/* <Todo todos={this.state}/> */}
+        <TodoForm 
+        todos={this.state} 
+        todoChange={this.changeHandler} 
+        addNewTask={this.addListData}
+        />
       </div>
     );
   }
