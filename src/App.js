@@ -40,6 +40,31 @@ class App extends React.Component {
       completed: false
     })
   }
+
+  toggleItem = taskId => {
+    // map over array
+    // when task is clicked, toggle the task completed field
+    // otherwise return to the task uncompleted
+    this.setState({
+      todos: this.state.todos.map(task => {
+        if (taskId === task.id){
+          return {
+            ...task,
+            completed: !task.completed
+          }
+        }
+      })
+    })
+  }
+
+  clearTodo = event => {
+    event.preventDefault();
+    // if task is completed (task.purchased is true_ then filter out)
+    this.setState ({
+      todos: this.state.todos.filter(task => !task.completed)
+    })
+  }
+
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state,
@@ -48,13 +73,13 @@ class App extends React.Component {
     return (
       <div>
         <h2>Todo List: </h2>
-        <TodoList 
-        todos={this.state.listsData} />
+        <TodoList todos={this.state.listsData} />
         {/* <Todo todos={this.state}/> */}
         <TodoForm 
         todos={this.state} 
         todoChange={this.changeHandler} 
         addNewTask={this.addListData}
+        clearTodo={this.clearTodo}
         />
       </div>
     );
