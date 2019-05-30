@@ -15,14 +15,14 @@ class App extends React.Component {
       task: '',
       id: 0,
       completed: false
-      }
-  }
+      };
+  };
 
   changeHandler = event => {
     this.setState({
       [event.target.name]: event.target.value
-    })
-  }
+    });
+  };
 
   addListData = event => {
     event.preventDefault();
