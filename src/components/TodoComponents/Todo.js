@@ -4,26 +4,14 @@
 import React from 'react';
 import { tsImportEqualsDeclaration } from '@babel/types';
 
-class Todo extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            todos: [
-                {
-                    task: 'Eat',
-                    id: 456,
-                    completed: false
-                },
-                {
-                    task: 'Sleep',
-                    id: 789,
-                    completed: false
-                }
-            ]
-        }
-    }
+
+
+const Todo = props => {
+    return (
+        props.todos.task
+    )
 }
 
 
 
-export default TodoForm;
+export default Todo;

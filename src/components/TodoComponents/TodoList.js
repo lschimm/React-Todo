@@ -15,8 +15,10 @@ const TodoList = props => {
     return (
         <div>
             {props.todos.map(todo => (
-                <todo todos={todo}
+                <div>
+                <Todo todos={todo}
                 id ={todo.id} />
+                </div>
             ))}
         </div>
     )

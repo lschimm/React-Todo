@@ -1,13 +1,23 @@
 import React from 'react';
 
 import TodoForm from './components/TodoComponents/TodoForm';
-// import Todo from './components/TodoComponents/Todo';
-// import TodoList from './components/TodoComponents/TodoList';
+import TodoList from './components/TodoComponents/TodoList';
 
 class App extends React.Component {
   constructor () {
     super();
-    this.state= {}
+    this.state= [
+      {
+        task: 'Organize Garage',
+        id: 1528817077286,
+        completed: false
+      },
+      {
+        task: 'Bake Cookies',
+        id: 1528817084358,
+        completed: false
+      }
+    ]
   }
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -17,14 +27,13 @@ class App extends React.Component {
     return (
       <div>
         <h2>Todo List: </h2>
+        <TodoList 
+        todos={this.state} />
         <TodoForm />
       </div>
     );
   }
 }
-
-
-
 
 
 export default App;
