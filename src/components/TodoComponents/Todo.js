@@ -8,7 +8,12 @@ import { tsImportEqualsDeclaration } from '@babel/types';
 
 const Todo = props => {
     return (
+        // <div className={`task${props.task.completed === true ? ' completed' : ''}`}
+        // onClick={() => props.toggleTask(props.task.id)}
+        // >
+        // {props.todos.task}
         props.todos.task
+        // </div>
     )
 }
 

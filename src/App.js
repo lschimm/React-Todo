@@ -41,7 +41,7 @@ class App extends React.Component {
     })
   }
 
-  toggleItem = taskId => {
+  toggleTask = taskId => {
     // map over array
     // when task is clicked, toggle the task completed field
     // otherwise return to the task uncompleted
@@ -57,7 +57,7 @@ class App extends React.Component {
     })
   }
 
-  clearTodo = event => {
+  clearCompleted = event => {
     event.preventDefault();
     // if task is completed (task.purchased is true_ then filter out)
     this.setState ({
@@ -79,7 +79,7 @@ class App extends React.Component {
         todos={this.state} 
         todoChange={this.changeHandler} 
         addNewTask={this.addListData}
-        clearTodo={this.clearTodo}
+        clearTodo={this.clearCompleted}
         />
       </div>
     );
