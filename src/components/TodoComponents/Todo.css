@@ -1,12 +1,12 @@
-.task {
+/* .task {
     width
-}
+} */
 
 /* .task:active {
     
 }
 */
 
-.completed-style {
+.task.completed {
     text-decoration: line-through;
 }

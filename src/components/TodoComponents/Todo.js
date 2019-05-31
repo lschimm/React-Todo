@@ -3,20 +3,20 @@
 
 import React, { Component } from 'react';
 import { tsImportEqualsDeclaration } from '@babel/types';
-
+import './Todo.css';
 
 
 const Todo = props => {
     return (
-        // <div className={`task${props.task.completed === true ? ' completed' : ''}`}
-        // onClick={() => props.toggleTask(props.task.id)}
-        // >
-        // {props.todos.task}
-        props.todos.task
-        // </div>
+        <div className={`task${props.todos.completed ? ' completed' : ''}`}
+        onClick={() => props.toggleT(props.todos.id)}
+        >
+            <p>{props.todos.task}</p>
+        </div>
     )
 }
 
+// props.todos.task
 
 
 export default Todo;

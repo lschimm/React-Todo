@@ -32,6 +32,7 @@ class TodoForm extends React.Component {
             item: ''
         }
     }
+
   changeHandler = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -40,21 +41,22 @@ class TodoForm extends React.Component {
 
     submitTask = event => {
         event.preventDefault();
-        this.props.submitTask(this.state.item);
         this.setState ({ task: ''});
+        this.props.addNewTask(event, this.props.task);
     };
 
     render() {
         return(
-            <form onSubmit= {this.submitTask} className="todo-form">
+            <form className="todo-form">
                 <input
+                    type="text"
                     name="task"
                     placeholder="enter task"
-                    value= {this.state.task}
-                    onChange={this.changeHandler}
+                    value= {this.props.task}
+                    onChange={this.props.todoChange}
                  />
-                 <button>Add Todo</button>
-                 {/* <button onClick={this.props.clearCompleted}>Clear Completed</button> */}
+                 <button onClick={this.submitTask}>Add Todo</button>
+                 <button onClick={this.props.clearTodo}>Clear Completed</button>
             </form>
         )
     }

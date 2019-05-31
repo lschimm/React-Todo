@@ -46,13 +46,14 @@ class App extends React.Component {
     // when task is clicked, toggle the task completed field
     // otherwise return to the task uncompleted
     this.setState({
-      todos: this.state.todos.map(task => {
+      listsData: this.state.listsData.map(task => {
         if (taskId === task.id){
           return {
             ...task,
             completed: !task.completed
           }
         }
+        return task;
       })
     })
   }
@@ -61,7 +62,7 @@ class App extends React.Component {
     event.preventDefault();
     // if task is completed (task.purchased is true_ then filter out)
     this.setState ({
-      todos: this.state.todos.filter(task => !task.completed)
+      listsData: this.state.listsData.filter(task => !task.completed)
     })
   }
 
@@ -73,13 +74,15 @@ class App extends React.Component {
     return (
       <div>
         <h2>Todo List: </h2>
-        <TodoList todos={this.state.listsData} />
-        {/* <Todo todos={this.state}/> */}
+        <TodoList 
+          todos={this.state.listsData} 
+          todoToggle={this.toggleTask}
+          />
         <TodoForm 
-        todos={this.state} 
-        todoChange={this.changeHandler} 
-        addNewTask={this.addListData}
-        clearTodo={this.clearCompleted}
+          todos={this.state} 
+          todoChange={this.changeHandler} 
+          addNewTask={this.addListData}
+          clearTodo={this.clearCompleted}
         />
       </div>
     );
