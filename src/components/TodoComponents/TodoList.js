@@ -12,6 +12,12 @@ import React, { Component } from 'react';
 import Todo from './Todo';
 
 const TodoList = props => {
+
+
+    // function addNewComment() {
+
+    // }
+
     return (
         <div className="todo-list">
             {props.todos.map(todo => (

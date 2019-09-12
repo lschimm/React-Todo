@@ -4,6 +4,8 @@ import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 import { lists } from './tododata';
 import { random } from 'node-forge';
+import './components/TodoComponents/Todo.css'
+
 // import Todo from './components/TodoComponents/Todo';
 
 class App extends React.Component {
