@@ -1,6 +1,6 @@
-/* .task {
-    width
-} */
+.task {
+    color: black;
+}
 
 /* .task:active {
     
@@ -12,16 +12,18 @@
 }
 
 body {
+    margin: auto;
+    font-family: Helvetica, Arial, Sans-Serif;
+    text-align: center;
+    color: white;
     background: #4d929e;
     display: flex;
     justify-content: center;
-    line-height: 30px;
-    font-family: Helvetica, Arial, Sans-Serif;
-    margin: auto;
-    color: white;
+    line-height: 1rem;
 }
 
+
 button {
-    background: gray;
-    border-radius: 25px;
+    background: white;
+    margin: .5em;
 }
