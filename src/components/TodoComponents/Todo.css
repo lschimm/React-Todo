@@ -1,0 +1,27 @@
+/* .task {
+    width
+} */
+
+/* .task:active {
+    
+}
+*/
+
+.task.completed {
+    text-decoration: line-through;
+}
+
+body {
+    background: #4d929e;
+    display: flex;
+    justify-content: center;
+    line-height: 30px;
+    font-family: Helvetica, Arial, Sans-Serif;
+    margin: auto;
+    color: white;
+}
+
+button {
+    background: gray;
+    border-radius: 25px;
+}
