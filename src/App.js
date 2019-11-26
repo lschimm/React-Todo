@@ -1,12 +1,8 @@
-import React from 'react';
-
-import TodoForm from './components/TodoComponents/TodoForm';
-import TodoList from './components/TodoComponents/TodoList';
-import { lists } from './tododata';
-import { random } from 'node-forge';
+import React from 'react'
+import TodoForm from './components/TodoComponents/TodoForm'
+import TodoList from './components/TodoComponents/TodoList'
+import { lists } from './tododata'
 import './components/TodoComponents/Todo.css'
-
-// import Todo from './components/TodoComponents/Todo';
 
 class App extends React.Component {
   constructor () {
@@ -23,17 +19,17 @@ class App extends React.Component {
   changeHandler = event => {
     this.setState({
       [event.target.name]: event.target.value
-    });
-  };
+    })
+  }
 
   addListData = event => {
-    event.preventDefault();
+    event.preventDefault()
 
     const newData = {
       task: this.state.task,
       id: this.state.id,
       completed: this.state.completed
-    };
+    }
 
     this.setState({
       listsData: [...this.state.listsData, newData],
@@ -61,7 +57,7 @@ class App extends React.Component {
   }
 
   clearCompleted = event => {
-    event.preventDefault();
+    event.preventDefault()
     // if task is completed (task.purchased is true_ then filter out)
     this.setState ({
       listsData: this.state.listsData.filter(task => !task.completed)
@@ -75,7 +71,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Todo List: </h2>
+        <h1>Todo List: </h1>
+        <p>To clear items, click item and then press Clear Comleted button.</p>
         <TodoList 
           todos={this.state.listsData} 
           todoToggle={this.toggleTask}
@@ -87,9 +84,9 @@ class App extends React.Component {
           clearTodo={this.clearCompleted}
         />
       </div>
-    );
+    )
   }
 }
 
 
-export default App;
+export default App

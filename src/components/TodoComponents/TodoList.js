@@ -7,17 +7,10 @@
 // the list generating a new `<Todo />` for each element in the array.
 
 
-import React, { Component } from 'react';
-
-import Todo from './Todo';
+import React from 'react'
+import Todo from './Todo'
 
 const TodoList = props => {
-
-
-    // function addNewComment() {
-
-    // }
-
     return (
         <div className="todo-list">
             {props.todos.map(todo => (
@@ -33,4 +26,4 @@ const TodoList = props => {
     )
 }
 
-export default TodoList;
+export default TodoList

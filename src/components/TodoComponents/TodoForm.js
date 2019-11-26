@@ -1,29 +1,7 @@
 // `<TodoForm>` will hold your input field and your
 // `Add Todo` and `Clear Completed` buttons.
-import React from 'react';
+import React from 'react'
 
-// handleChanges = event => {
-//     this.setState({
-//       [event.target.task]: event.target.value
-//     });
-//   };
-
-// const TodoForm = props  => {
-//         return (
-//             <form onSubmit={props.addNewTask}>
-//                 <input
-//                     type="text"
-//                     name="task"
-//                     placeholder="enter task"
-//                     value= {props.todos.task}
-//                     onChange={props.todoChange}
-//                  />
-//                 <button>Add Todo</button>
-//                 <button>Clear Completed</button>
-                
-//             </form>
-//         )
-// }
 
 class TodoForm extends React.Component {
     constructor() {
@@ -40,9 +18,9 @@ class TodoForm extends React.Component {
   };
 
     submitTask = event => {
-        event.preventDefault();
-        this.setState ({ task: ''});
-        this.props.addNewTask(event, this.props.task);
+        event.preventDefault()
+        this.setState ({ task: ''})
+        this.props.addNewTask(event, this.props.task)
     };
 
     render() {
@@ -51,16 +29,18 @@ class TodoForm extends React.Component {
                 <input
                     type="text"
                     name="task"
-                    placeholder="enter task"
+                    placeholder="Enter your task here"
                     value= {this.props.task}
                     onChange={this.props.todoChange}
                  />
-                 <button onClick={this.submitTask}>Add Todo</button>
-                 <button onClick={this.props.clearTodo}>Clear Completed</button>
+                 <div className="todo-buttons">
+                    <button onClick={this.submitTask}>Add Task</button>
+                    <button onClick={this.props.clearTodo}>Clear Completed</button>
+                 </div>
             </form>
         )
     }
 }
 
 
-export default TodoForm;
+export default TodoForm
