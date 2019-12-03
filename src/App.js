@@ -70,14 +70,14 @@ export default class App extends React.Component{
         <h1>Todo List:</h1>
         <p>To clear items, click item, and then press Clear Completed button</p>
         <TodoList
-        todos= {this.state.listsData}
-        todoToggle= {this.toggleTask}
+        todo s= {this.state.listsData}
+        todoToggle = {this.toggleTask}
         />
         <TodoForm
-        todos= {this.state}
-        todoChange= {this.changeHandler}
-        addNewTask= {this.addListData}
-        clearTodo= {this.clearCompleted}
+        todos = {this.state}
+        todoChange = {this.changeHandler}
+        addNewTask = {this.addListData}
+        clearTodo = {this.clearCompleted}
         />
       </div>
     )
